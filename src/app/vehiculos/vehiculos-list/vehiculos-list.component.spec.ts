@@ -53,12 +53,20 @@ describe('VehiculosListComponent', () => {
   });
 
   it('should load vehiculos on init', () => {
-    (vehiculoService.getVehiculos as jasmine.Spy).and.returnValue(of(mockVehiculos));
-
     component.ngOnInit();
 
-    expect(component.vehiculos.length).toBe(3);
+    expect(vehiculoService.getVehiculos).toHaveBeenCalled();
     expect(component.vehiculos).toEqual(mockVehiculos);
+  });
+
+  it('table should have 3 rows and header', () => {
+    fixture.detectChanges();
+    
+    const tableRows = fixture.debugElement.queryAll(By.css('table tbody tr'));
+    const headerRow = fixture.debugElement.query(By.css('table thead tr'));
+    
+    expect(headerRow).toBeTruthy();
+    expect(tableRows.length).toBe(3);
   });
 
   it('should correctly count vehiculos by brand', () => {
