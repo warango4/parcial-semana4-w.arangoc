@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "untitled": {
+    "parcial-semana4-w.arangoc": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/untitled",
+            "outputPath": "dist/parcial-semana4-w.arangoc",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "untitled:build:production"
+              "buildTarget": "parcial-semana4-w.arangoc:build:production"
             },
             "development": {
-              "buildTarget": "untitled:build:development"
+              "buildTarget": "parcial-semana4-w.arangoc:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "untitled:build"
+            "buildTarget": "parcial-semana4-w.arangoc:build"
           }
         },
         "test": {

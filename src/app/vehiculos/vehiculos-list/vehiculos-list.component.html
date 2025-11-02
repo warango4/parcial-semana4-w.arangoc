@@ -1,18 +1,33 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Marca</th>
-      <th scope="col">Línea</th>
-      <th scope="col">Modelo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let vehiculo of vehiculos">
-      <th scope="row">{{ vehiculo.id }}</th>
-      <td>{{ vehiculo.marca }}</td>
-      <td>{{ vehiculo.linea }}</td>
-      <td>{{ vehiculo.modelo }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container mt-4">
+  <img src="/assets/TuSegundazo.png" alt="titulo" class="img-fluid mb-4 titulo" />
+  <hr />
+  <img src="/assets/image 1 1.png" alt="logo" class="img-fluid mb-4" />
+  <div class="col-lg-6">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Línea</th>
+          <th scope="col">Modelo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <th scope="row">{{ vehiculo.id }}</th>
+          <td>{{ vehiculo.marca }}</td>
+          <td>{{ vehiculo.linea }}</td>
+          <td>{{ vehiculo.modelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="mt-4">
+    <div *ngFor="let brand of getVehiculosCountByBrand() | keyvalue">
+      <p>Total {{ brand.key }}: {{ brand.value }}</p>
+    </div>
+  </div>
+  
+  <p class="text-center">Contact us: +57 3102105253 - info&#64;tusegundazo.com - &#64;tusegundazo</p>
+</div>

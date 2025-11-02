@@ -18,6 +18,18 @@ export class VehiculosListComponent implements OnInit {
     });
   }
 
+  getVehiculosCountByBrand(): { [marca: string]: number } {
+    const countByBrand: { [marca: string]: number } = {};
+    this.vehiculos.forEach(vehiculo => {
+      if (countByBrand[vehiculo.marca]) {
+        countByBrand[vehiculo.marca]++;
+      } else {
+        countByBrand[vehiculo.marca] = 1;
+      }
+    });
+    return countByBrand;
+  }
+
   ngOnInit() {
     this.getVehiculos();
   }

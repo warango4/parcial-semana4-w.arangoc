@@ -61,4 +61,17 @@ describe('VehiculosListComponent', () => {
     expect(component.vehiculos).toEqual(mockVehiculos);
   });
 
+  it('should correctly count vehiculos by brand', () => {
+    component.vehiculos = [
+      { ...generateMockVehiculos(), marca: 'Toyota' },
+      { ...generateMockVehiculos(), marca: 'Honda' },
+      { ...generateMockVehiculos(), marca: 'Toyota' }
+    ];
+
+    const countByBrand = component.getVehiculosCountByBrand();
+
+    expect(countByBrand['Toyota']).toBe(2);
+    expect(countByBrand['Honda']).toBe(1);
+  });
+
 });
